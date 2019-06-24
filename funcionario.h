@@ -11,7 +11,6 @@ protected:
 		char fator_rh;
 		string especialidade;
 public:
-		virtual void consultar() = 0;
 		Funcionario(int id, string nome, string cpf, short idade, string tipo_sanguineo, char fator_rh, string especialidade);
 		void setId(int id);
 		int getId();
@@ -33,8 +32,8 @@ public:
 		string getCpf();
 		void setIdade(short idade);
 		short getIdade();
-		void setTipo_sanguineo(short tipo_sanguineo);
-		short getTipo_sanguineo();
+		void setTipo_sanguineo(string tipo_sanguineo);
+		string getTipo_sanguineo();
 		void setFator_rh(char fator_rh);
 		char getFator_rh();
 		void setEspecialidade(string especialidade);

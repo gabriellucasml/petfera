@@ -1,21 +1,30 @@
+/**@file animal.h 
+ * @author Acsa Laiane
+ * @author Daniele Mendonça
+ * @author Gabriel Lucas
+ * @author Gabriel Martins
+ * @author Maria Luiza */
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+/**@breaf Classe que serve de base para todos os tipos de animais.*/
 class Animal{
-	private:
-		int id;
-		double tamanho;
-		string classe;
-		string nome_cientifico;
-		string nome_batismo;
-		string dieta;
-		char sexo;
-		bool ameacadoExtincao;
-		Veterinario veterinario;
-		Tratador tratador;	
+	protected:
+		int id; /***<Id do animal */
+		double tamanho;/**<Tamanho do animal*/
+		string classe;/**<Classe científica do animal */
+		string nome_cientifico;/**<Nome cientídico do animal */
+		string nome_batismo;/**<Nome de batismo do animal */
+		string dieta;/**<Dieta do animal */
+		char sexo;/**<Dieta do animal */
+		bool ameacadoExtincao;/**<Animal ameçado de extinção? */
+		bool nativo;/**<Animal nativo? se true, nativo, se false exótico*/
+		bool domestico;/**<Animal doméstico? se true, doméstico, se false, silvestre */
+		Veterinario veterinario;/**<Veterinário associado ao animal */
+		Tratador tratador;/**<Tratador associado ao animal*/
 	public:
-		virtual void consultar() = 0;
-		Animal(Veterinario veterinario, Tratador tratador, int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, string nome_batismo);
+		virtual void cosultar();
+		Animal();
 		void setId(int id);
 		int getId();
 		void setClasse(string classe);
@@ -28,11 +37,13 @@ class Animal{
 		double getTamanho();
 		void setDieta(string dieta);
 		string getDieta();
-		void setVeterinario(VETERINARIO veterinario);
+		void setVeterinario(Veterinario veterinario);
 		Veterinario getVeterinario();
-		void setTratador(TRATADOR tratador);
+		void setTratador(Tratador tratador);
 		Tratador getTratador();
 		void setNome_batismo(string nome_batismo);
+		bool getAmeacadoExtincao();
+		void setAmeacadoExtincao(bool situacao);
 		~Animal();
 		
 };

@@ -2,14 +2,6 @@
 #define SISTEMA_H
 
 /**@brief classe referente à manipulação de informações, cadastro e venda de animais*/
-#include <map>
-#include "animal.h"
-#include "ave.h"
-#include "anfibio.h"
-#include "reptil.h"
-#include "mamifero.h"
-#include "manipular_arquivos.h"
-
 class Sistema{
 private:
 	/**@brief Guarda a seleção do menu*/
@@ -25,16 +17,25 @@ private:
 	int posicaoVet;
 	map<int, Tratador> mapTratador;
 	map<int, Veterinario> mapVeterinario;
-	map<int, Mamifero> mapMamifero;
-	map<int, Ave> mapAve;
-	map<int, Reptil> mapReptil;
-	map<int, Anfibio> mapAnfibio;	
+	map<int, Mamifero*> mapMamifero;
+	map<int, Ave*> mapAve;
+	map<int, Reptil*> mapReptil;
+	map<int, Anfibio*> mapAnfibio;	
 public:
 	Sistema();
 	void displayMenu();
 	void displayClasses();
 	void operarSistema();
 	void setStructAnimal();
+	void registrarAnimal();
+	void imprimirTratador();
+	void imprimirVeterinario();
+	void imprimirAve();
+	void imprimirAnfibio();
+	void imprimirMamifero();
+	void imprimirReptil();
+	int funcaoTratador();
+	int funcaoVeterinario();
 	~Sistema();
 };
 
