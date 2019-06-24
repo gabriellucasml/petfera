@@ -6,16 +6,8 @@
 
 using namespace std;
 
-Animal::Animal(Veterinario veterinario, Tratador tratador, int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, string nome_batismo){
-	this->id = id;
-	this->classe = classe;
-	this->nome_cientifico = nome_cientifico;
-	this->sexo = sexo;
-	this->tamanho = tamanho;
-	this->dieta = dieta;
-	this->veterinario = veterinario;
-	this->tratador = tratador;
-	this->nome_batismo = nome_batismo;
+Animal::Animal(){
+
 };
 
 void Animal::setId(int id){
@@ -85,6 +77,14 @@ Tratador Animal::getTratador(){
 void Animal::setNome_batismo(string nome_batismo){
 	this->nome_batismo = nome_batismo;
 };
+
+bool Animal::getAmeacadoExtincao(){
+	return this->ameacadoExtincao;
+}
+
+void Animal::setAmeacadoExtincao(bool sitaucao){
+	this->ameacadoExtincao = sitaucao;
+}
 
 Animal::~Animal(){
 };

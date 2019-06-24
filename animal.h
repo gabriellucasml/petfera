@@ -7,7 +7,7 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
-/**@breaf Classe abstrata que serve de base para todos os tipos de animais.*/
+/**@breaf Classe que serve de base para todos os tipos de animais.*/
 class Animal{
 	protected:
 		int id; /***<Id do animal */
@@ -23,8 +23,8 @@ class Animal{
 		Veterinario veterinario;/**<Veterinário associado ao animal */
 		Tratador tratador;/**<Tratador associado ao animal*/
 	public:
-		virtual void consultar() = 0;
-		Animal(Veterinario veterinario, Tratador tratador, int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, string nome_batismo);
+		virtual void cosultar();
+		Animal();
 		void setId(int id);
 		int getId();
 		void setClasse(string classe);
@@ -42,6 +42,8 @@ class Animal{
 		void setTratador(Tratador tratador);
 		Tratador getTratador();
 		void setNome_batismo(string nome_batismo);
+		bool getAmeacadoExtincao();
+		void setAmeacadoExtincao(bool situacao);
 		~Animal();
 		
 };

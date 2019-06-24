@@ -17,16 +17,25 @@ private:
 	int posicaoVet;
 	map<int, Tratador> mapTratador;
 	map<int, Veterinario> mapVeterinario;
-	map<int, Mamifero> mapMamifero;
-	map<int, Ave> mapAve;
-	map<int, Reptil> mapReptil;
-	map<int, Anfibio> mapAnfibio;	
+	map<int, Mamifero*> mapMamifero;
+	map<int, Ave*> mapAve;
+	map<int, Reptil*> mapReptil;
+	map<int, Anfibio*> mapAnfibio;	
 public:
 	Sistema();
 	void displayMenu();
 	void displayClasses();
 	void operarSistema();
 	void setStructAnimal();
+	void registrarAnimal();
+	void imprimirTratador();
+	void imprimirVeterinario();
+	void imprimirAve();
+	void imprimirAnfibio();
+	void imprimirMamifero();
+	void imprimirReptil();
+	int funcaoTratador();
+	int funcaoVeterinario();
 	~Sistema();
 };
 
