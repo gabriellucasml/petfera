@@ -9,6 +9,7 @@
 #include "veterinario.h"
 #include "tratador.h"
 #include "sistema.h"
+#include "colors.h"
 
 using namespace std;
 
@@ -17,8 +18,8 @@ Sistema::Sistema(){
 };
 
 void Sistema::displayMenu(){
-	cout << "Bem vindo ao sistema de gestão do PetFera." << endl;
-	cout << "Selecione uma opção:" << endl;
+	cout << YELLOW << "Bem vindo ao sistema de gestão do PetFera." << RESET << endl;
+	cout << BLUE<<"Selecione uma opção:" <<RESET<< endl;
 	cout << "1 - Cadastrar um novo animal" << endl;
 	cout << "2 - Realizar venda" << endl;
 	cout << "3 - Alterar dados dos animais cadastrados" << endl;
@@ -29,7 +30,7 @@ void Sistema::displayMenu(){
 };
 
 void Sistema::displayClasses(){
-	cout << "Selecione a classe do animal a ser cadastrado: " << endl;
+	cout << BLUE << "Selecione a classe do animal a ser cadastrado: " << RESET << endl;
 	cout << "1 - Anfíbio" << endl;
 	cout << "2 - Ave" << endl;
 	cout << "3 - Mamífero" << endl;
@@ -54,14 +55,14 @@ void Sistema::operarSistema(){
 		case 3:
 
 		case 4:
-			cout << "Qual consulta que realizar: " << endl;
+			cout << BLUE << "Qual consulta que realizar: " << RESET << endl;
 			cout << "1 - Funcionário" << endl;
 			cout << "2 - Animal" << endl;
 			cin >> this->selecaoConsulta;
 			
 
 		case 5:
-			cout << "Selecione o tipo do funcionário a ser cadastrado: " << endl;
+			cout << BLUE << "Selecione o tipo do funcionário a ser cadastrado: " << RESET << endl;
 			cout << "1 - Tratador" << endl;
 			cout << "2 - Veterinário" << endl;
 			cin >> this->selecaoFuncionarios;
@@ -70,12 +71,12 @@ void Sistema::operarSistema(){
 			else if(selecaoFuncionarios == 2):
 				funcaoVeterinario();
 			else{
-				cout << "Opção digitade incorreta" << endl;			
+				cout << RED << "Opção digita é incorreta"<< RESET << endl;			
 			}
 			
 
 		default:
-			cout << "Seleção inválida. Por favor, selecione uma opção válida." << endl;
+			cout << RED << "Seleção inválida. Por favor, selecione uma opção válida." << RESET << endl;
 			Sistema::displayMenu();
 	}
 };
@@ -162,7 +163,7 @@ void Sistema::registrarAnimal(){
 	string aux1, aux2;
 	char aux3;
 	Animal* novo = new Animal();
-	cout << "Qual animal você deseja registrar?" << endl;
+	cout << BLUE << "Qual animal você deseja registrar?"<< RESET << endl;
 	cout << "1 - Mamifero" << endl;
 	cout << "2 - Ave" << endl;
 	cout << "3 - Anfibio" << endl;
@@ -195,7 +196,7 @@ void Sistema::registrarAnimal(){
 	}else{
 		novo->setAmeacadoExtincao(false);
 	}
-	cout << "Listando tratadores disponíveis" << endl;
+	cout << BLUE << "Listando tratadores disponíveis" << RESET << endl;
 	imprimirTratador();
 	cout << "deseja escolher algum tratador dos cadastrados ou registrar um novo tratador?" << endl;
 	cout << "1 - escolher existente" << endl;
@@ -257,7 +258,7 @@ void Sistema::registrarAnimal(){
 			novoReptil->setTipo_veneno(aux1);
 			mapReptil.insert(pair<int, Reptil*>(novoReptil->getId(), novoReptil));
 			break;
-		default: cout << "opção inválida" << endl;
+		default: cout << RESET << "opção inválida" << RESET<< endl;
 	}
 	delete(novo);
 	delete(novoMamifero);
